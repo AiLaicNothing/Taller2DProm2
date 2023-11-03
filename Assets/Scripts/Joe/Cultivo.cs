@@ -9,6 +9,9 @@ public class Cultivo : MonoBehaviour
 
     public bool yacrecio;
 
+    public GameObject sincrecer;
+    public GameObject crecio;
+
     public void crecimiento()
     {
         StartCoroutine(TiempoDeEspera());
@@ -18,6 +21,8 @@ public class Cultivo : MonoBehaviour
     {
         yield return new WaitForSeconds(cooldown);
         yacrecio = true;
+        sincrecer.SetActive(false);
+        crecio.SetActive(true);
     }
     
 

@@ -54,6 +54,8 @@ public class Plantar : MonoBehaviour
         inventario.cultivo++;
         semillaplantada = false;
         cultivo.yacrecio = false;
+        cultivo.crecio.SetActive(false);
+        cultivo.sincrecer.SetActive(true);
     }
 
 
