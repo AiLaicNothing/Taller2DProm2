@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class Cultivo : MonoBehaviour
 {
-    public float tiempoencrecer;
-    public float tiempoactual;
+    public float cooldown;
 
     public bool yacrecio;
 
     public void crecimiento()
     {
-        if (Time.time - tiempoactual < tiempoencrecer)
-        {
-            return;
-            yacrecio = true;
-        }
-        tiempoactual = Time.time;
+        StartCoroutine(TiempoDeEspera());
     }
+
+    IEnumerator TiempoDeEspera()
+    {
+        yield return new WaitForSeconds(cooldown);
+        yacrecio = true;
+    }
+    
 
 }
  
